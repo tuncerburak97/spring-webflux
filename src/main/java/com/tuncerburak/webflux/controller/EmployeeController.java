@@ -19,6 +19,11 @@ public class EmployeeController {
 
     private final EmployeeRepository employeeRepository;
 
+    @GetMapping("/greeting")
+    public String message(){
+        return "First Deploy Message";
+    }
+
     @GetMapping("/find/{id}")
     public Mono<Employee> getById(@PathVariable String id){
         return employeeRepository.findById(id);
